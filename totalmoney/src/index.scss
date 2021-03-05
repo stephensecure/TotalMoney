@@ -1,0 +1,33 @@
+body {
+   background-color: #faf8f8;
+   // background-color: blueviolet;
+   
+}
+
+.product_name {
+   // border: orange 2px solid;
+   display: flex;
+   justify-content: center;
+   padding: 20px 40px;
+   margin: 0 10px;
+}
+
+.header_main {
+   font-size: 2.5em;
+}
+
+.container_main {
+    padding: 10px; 
+    margin: 10px;
+    height: 400px;
+   //  background-color: grey;
+ }
+
+
+.form_main {
+   display: flex;
+   justify-content: center;
+   padding: 20px;
+   margin: 100px;
+  
+}
