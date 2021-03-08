@@ -7,17 +7,20 @@ import "./DataForm.scss"
 import CardResult from "./CardResult";
 
 
-    const renderResults = (values) => {
-        // console.log("show result data here")
-        // const {values} = useCustomForm({initialValues})
-        // console.log(values)
-        console.log(values)
+    const showResult = (values)=> {
+        // console.log("showResult")
+        renderResults(values)
+    }
 
+    const renderResults = (values) => {
+       
+        // console.log(values)
 
         return (
-            <div> 
+            <> 
+            {"show card result..."}
                 <CardResult {...values}/>
-            </div>
+            </>
         )
     }
 
@@ -34,13 +37,6 @@ import CardResult from "./CardResult";
             // title: title1()
     
         }
-        // console.log(initialValues)
-        // console.log(values)
-
-        // const title1 =() => {
-        //     console.log("this is  a title")
-        // }
-        // console.log(initialValues) //good
 
         const [title, setTitle] = useState("")
 
@@ -50,10 +46,6 @@ import CardResult from "./CardResult";
         }
         const initialValues = { ...initialValues1, title }
 
-        // let initialValues = { ...initialValues1, title }
-        // console.log(initialValues) 
-        // console.log(initialValues1) 
-        // console.log(title) 
 
         const {
             values,
@@ -64,20 +56,18 @@ import CardResult from "./CardResult";
             handleSubmit,
             } = useCustomForm({
             initialValues,
-            // initialValues: { ...initialValues, title },
-            // title,
-            onSubmit: (values) => console.log({ values, initialValues })
+            onSubmit: (values) => {
+                console.log("show/hid - run my function call here", { values, initialValues })
+                console.log("test 2")
+                // href="/form"
+            }
+             
         })
-        // console.log(title)
 
-        // values = {...values, title}
-        // console.log(values)
-        // console.log(initialValues)
-
-        
-      return (
-        <>
-        <div className="form_main"> 
+        const showForm = (values)=> {
+            // console.log("showForm")
+            return (
+            <div className="form_main">  
             <form onSubmit={handleSubmit} className="ui form">
                 <h2> Eligibility Form</h2>
                 <p className= "" > Please enter your Details</p>
@@ -168,9 +158,20 @@ import CardResult from "./CardResult";
             </form>
         </div>
 
-        <div>
-            { renderResults(values) }
-        </div>
+            )
+        }
+
+        
+      return (
+        <>
+            <div > 
+                {showForm(values)}
+            </div>
+            <div className="form_main">
+                {showResult(values) }
+                <p> show result</p>
+                <CardResult {...values}/>
+            </div>
         </>
       )
     }

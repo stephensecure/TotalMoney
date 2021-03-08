@@ -11,10 +11,6 @@ const [touched, setTouched] = useState({});
 const [onSubmitting, setOnSubmitting] = useState(false);
 const [onBlur, setOnBlur] = useState(false)
 
-//   const [title, setTitle] = useState(false)
-//   const [agree, setAgree] = useState(false)
-
-
   const formRendered = useRef(true);
 
   useEffect(() => {
@@ -52,9 +48,9 @@ const [onBlur, setOnBlur] = useState(false)
     // console.log(event)
     // console.log(title)
     if (event) event.preventDefault()
-   
     setErrors({ ...errors })
     onSubmit({ values, errors })
+    console.log("show result/ toggle")
   }
 
 //   const handleSelectChange = event => {

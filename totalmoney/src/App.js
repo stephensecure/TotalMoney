@@ -10,6 +10,9 @@ const Form = lazy(() => import('./components/DataForm'))
 const Forms= lazy(() => import('./components/DataForms'))
 const Result = lazy(() => import('./components/CardResult'))
 
+// createStore({
+//     data: {}
+//   })
 
 const App = () => (
     <Router>
