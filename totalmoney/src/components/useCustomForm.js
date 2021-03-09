@@ -1,15 +1,18 @@
 import { getTitle } from "hookrouter";
 import { useState, useEffect, useRef } from "react";
 
+
+
+
 const useCustomForm = ({
   initialValues,
   onSubmit
-}) => {
-const [values, setValues] = useState(initialValues || {});
-const [errors, setErrors] = useState({});
-const [touched, setTouched] = useState({});
-const [onSubmitting, setOnSubmitting] = useState(false);
-const [onBlur, setOnBlur] = useState(false)
+  }) => {
+  const [values, setValues] = useState(initialValues || {});
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
+  // const [onSubmitting, setOnSubmitting] = useState(false);
+  // const [onBlur, setOnBlur] = useState(false)
 
   const formRendered = useRef(true);
 
@@ -19,8 +22,8 @@ const [onBlur, setOnBlur] = useState(false)
         setValues(initialValues)
         setErrors({})
         setTouched({})
-        setOnSubmitting(false)
-        setOnBlur(false)
+        // setOnSubmitting(false)
+        // setOnBlur(false)
     }
     formRendered.current = false;
   }, [initialValues])
@@ -50,7 +53,7 @@ const [onBlur, setOnBlur] = useState(false)
     if (event) event.preventDefault()
     setErrors({ ...errors })
     onSubmit({ values, errors })
-    console.log("show result/ toggle")
+    console.log("on Submit clicked")
   }
 
 //   const handleSelectChange = event => {

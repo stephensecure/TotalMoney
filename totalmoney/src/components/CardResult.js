@@ -1,6 +1,23 @@
 import React from "react"
 import Silhouette from './silhouette.png'
 import "./CardResult.scss"
+// import { configureStore } from '@reduxjs/toolkit'
+
+import DataForms from "./DataForms"
+import useCustomForm from "./useCustomForm"
+
+
+// console.log(store.getState())
+
+// const { values} = DataForms
+// console.log(values)
+
+// const { values} = useCustomForm({
+//     initialValues,
+//     onSubmit: (values) => {
+//         console.log("Card Resultdata value showing ")
+//     }
+// })
 
 
 const CardResult = (props) => {

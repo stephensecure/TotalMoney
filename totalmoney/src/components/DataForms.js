@@ -6,6 +6,8 @@ import useCustomForm from "./useCustomForm";
 import "./DataForm.scss"
 import CardResult from "./CardResult";
 
+import { configureStore } from '@reduxjs/toolkit'
+
 
     const showResult = (values)=> {
         // console.log("showResult")
@@ -13,9 +15,7 @@ import CardResult from "./CardResult";
     }
 
     const renderResults = (values) => {
-       
         // console.log(values)
-
         return (
             <> 
             {"show card result..."}
@@ -26,7 +26,7 @@ import CardResult from "./CardResult";
 
     const DataForms = () => {
 
-        let initialValues1 = {
+        let initialValues = {
             firstName: "",
             lastName: "",
             dob: "",
@@ -35,7 +35,6 @@ import CardResult from "./CardResult";
             houseNumber: "",
             postCode: "",
             // title: title1()
-    
         }
 
         const [title, setTitle] = useState("")
@@ -44,27 +43,63 @@ import CardResult from "./CardResult";
             const value = event.target.value
             setTitle(value)
         }
-        const initialValues = { ...initialValues1, title }
-
 
         const {
             values,
-            errors,
-            touched,
+            // errors,
+            // touched,
             handleChange,
-            handleBlur,
+            // handleBlur,
             handleSubmit,
             } = useCustomForm({
             initialValues,
+            // initialValues: { ...initialValues, title },
+            // title,
             onSubmit: (values) => {
                 console.log("show/hid - run my function call here", { values, initialValues })
                 console.log("test 2")
+               
                 // href="/form"
             }
-             
         })
 
-        const showForm = (values)=> {
+        const data = {...values, title}
+            // console.log(data)
+
+        const counterReducer = ( state= data) => {
+            // const data = {...values, title}
+            // console.log(data)
+            // console.log(state)
+            return state
+        }
+        const store = configureStore({ reducer: counterReducer })
+        console.log(store.getState())
+
+        // add to line 77 in dataForm
+        const realData = (data)=> {
+            if (handleSubmit) {
+                console.log("onSubmit clicked- show result")
+                return (
+                    <div className="form_main">
+                        {showResult(data) }
+                        <p> show result </p>
+                        {/* <CardResult {...data}/> */}
+                    </div>
+                )
+            // open the result page
+            // add cancel/ go back button 
+            }
+            // else {
+            //     return (
+            //         <div > 
+            //         {showForm(data)}
+            //         </div>
+            //     )
+            // // leave on form page 
+            // }
+        }
+
+        const showForm = (data)=> {
             // console.log("showForm")
             return (
             <div className="form_main">  
@@ -157,7 +192,6 @@ import CardResult from "./CardResult";
                 </div>
             </form>
         </div>
-
             )
         }
 
@@ -165,12 +199,7 @@ import CardResult from "./CardResult";
       return (
         <>
             <div > 
-                {showForm(values)}
-            </div>
-            <div className="form_main">
-                {showResult(values) }
-                <p> show result</p>
-                <CardResult {...values}/>
+                { realData(data) }
             </div>
         </>
       )
