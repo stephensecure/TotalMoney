@@ -9,24 +9,33 @@ import CardResult from "./CardResult";
 import { configureStore } from '@reduxjs/toolkit'
 
 
-    const showResult = (values)=> {
-        // console.log("showResult")
-        renderResults(values)
-    }
+    // const showResult = (values)=> {
+    //     // console.log("showResult")
+    //     renderResults(values)
+    // }
 
-    const renderResults = (values) => {
-        // console.log(values)
-        return (
-            <> 
-            {"show card result..."}
-                <CardResult {...values}/>
-            </>
-        )
+    // const renderResults = (values) => {
+    //     // console.log(values)
+    //     return (
+    //         <> 
+    //         {"show card result..."}
+    //             <CardResult {...values}/>
+    //         </>
+    //     )
+    // }
+
+
+    // create engine to show data for or result 
+    const resultEngine =() => {
+        console.log("this is the result engine")
+        // Show result
     }
 
     const DataForms = () => {
 
-        let initialValues = {
+        // resultEngine() 
+
+        const initialValues = {
             firstName: "",
             lastName: "",
             dob: "",
@@ -38,11 +47,16 @@ import { configureStore } from '@reduxjs/toolkit'
         }
 
         const [title, setTitle] = useState("")
-
         const handleSelectChange = event => {
             const value = event.target.value
             setTitle(value)
         }
+        // const handleSubmit = event => {
+        //     if (event) event.preventDefault()
+        //     console.log("handleSubmit")
+        //     onSubmit({ values, errors })
+        // }
+        const data1 = {...initialValues, title}
 
         const {
             values,
@@ -52,58 +66,52 @@ import { configureStore } from '@reduxjs/toolkit'
             // handleBlur,
             handleSubmit,
             } = useCustomForm({
-            initialValues,
+            // initialValues,
+            initialValues: data1,
             // initialValues: { ...initialValues, title },
             // title,
             onSubmit: (values) => {
                 console.log("show/hid - run my function call here", { values, initialValues })
                 console.log("test 2")
-               
                 // href="/form"
             }
         })
 
+        console.log(values)
+
         const data = {...values, title}
             // console.log(data)
 
-        const counterReducer = ( state= data) => {
-            // const data = {...values, title}
-            // console.log(data)
-            // console.log(state)
-            return state
-        }
-        const store = configureStore({ reducer: counterReducer })
-        console.log(store.getState())
-
-        // add to line 77 in dataForm
-        const realData = (data)=> {
-            if (handleSubmit) {
-                console.log("onSubmit clicked- show result")
+        const resultData = (data)=> {
                 return (
                     <div className="form_main">
-                        {showResult(data) }
-                        <p> show result </p>
-                        {/* <CardResult {...data}/> */}
+                        {/* {showResult(data) } */}
+                        <CardResult {...data}/>
                     </div>
                 )
-            // open the result page
-            // add cancel/ go back button 
-            }
-            // else {
-            //     return (
-            //         <div > 
-            //         {showForm(data)}
-            //         </div>
-            //     )
-            // // leave on form page 
-            // }
         }
 
-        const showForm = (data)=> {
-            // console.log("showForm")
+        const [formDisplay, SetFormDisplay] = useState("flex")
+        const [resultDisplay, SetResultDisplay] = useState("none")
+
+
+        const steveSubmit =(event) => {
+            console.log("handle Steve submit")
+            SetFormDisplay("none")
+            SetResultDisplay("flex")
+            if (event) event.preventDefault()
+
+        }
+        const showForm = ()=> {
+            const data = {...values, title}
+
+            // console.log(data)
+            // console.log(values)
+
             return (
+                <>
             <div className="form_main">  
-            <form onSubmit={handleSubmit} className="ui form">
+            <form onSubmit={steveSubmit} className="ui form">
                 <h2> Eligibility Form</h2>
                 <p className= "" > Please enter your Details</p>
                 <div className="form_container"> 
@@ -148,11 +156,11 @@ import { configureStore } from '@reduxjs/toolkit'
                     <div className="fields">
                         <div className="eight wide field">
                             <label htmlFor="firstName">First name</label>
-                            <input id="firstName" name="firstName" type="text" placeholder="First Name" value= {values.firstName}   onChange={handleChange} />
+                            <input id="firstName" name="firstName" type="text" placeholder="First Name" value= {data.firstName}   onChange={handleChange} />
                         </div>
                         <div className="eight wide field">
                             <label htmlFor="lastName" >Last name</label>
-                            <input id="lastName" type="text" name="lastName" placeholder="Last Name" value= {values.lastName} onChange={handleChange} />
+                            <input id="lastName" type="text" name="lastName" placeholder="Last Name" value= {data.lastName} onChange={handleChange} />
                         </div>
                     </div>
                     <div className="field">
@@ -161,7 +169,7 @@ import { configureStore } from '@reduxjs/toolkit'
                     </div>
                     <div className="field">
                         <label className="label" htmlFor="empStatus" > Employment Status</label>
-                        <select className="ui dropdown" placeholder="Employment Status" name="empStatus" value= {values.empStatus} onChange={handleChange}>
+                        <select className="ui dropdown" placeholder="Employment Status" name="empStatus" value= {data.empStatus} onChange={handleChange}>
                             <option value="" disabled>-</option>
                             <option value="fulltime">Full time</option>
                             <option value="partime">Part time</option>
@@ -171,18 +179,18 @@ import { configureStore } from '@reduxjs/toolkit'
                     </div>
                     <div className="field">
                         <label className="label" htmlFor="income" > Annual Income (£)</label>
-                        <input id="income" type= "number" step="any" min="1000" max="1000000" name="income" value= {values.income} onChange={handleChange}/>
+                        <input id="income" type= "number" step="any" min="1000" max="1000000" name="income" value= {data.income} onChange={handleChange}/>
                     </div>
                     <div className="fields">
                         <div className="eight wide field">
                             <label htmlFor= "houseNumber"> House Number</label>
-                            <input id="houseNumber" type= "number" name="houseNumber" value= {values.houseNumber} onChange={handleChange}/>
+                            <input id="houseNumber" type= "number" name="houseNumber" value= {data.houseNumber} onChange={handleChange}/>
                         </div>
                     </div>
                     <div className="fields">
                         <div className="eight wide field">
                             <label htmlFor="postCode" > Post Code </label>
-                            <input id="postCode" type= "text" name="postCode" value= {values.postCode} onChange={handleChange}/>
+                            <input id="postCode" type= "text" name="postCode" value= {data.postCode} onChange={handleChange}/>
                         </div>
                     </div>
                     <div> 
@@ -191,18 +199,22 @@ import { configureStore } from '@reduxjs/toolkit'
                     </div>
                 </div>
             </form>
+        {/* </div> */}
         </div>
+        </>
             )
         }
-
-        
+       
       return (
         <>
-            <div > 
-                { realData(data) }
+            <div style={{color: "red", border:"2px solid red", display: formDisplay } } > 
+                { showForm(data) }
+            </div>
+            <div style={{border:"2px solid blue", display: resultDisplay } } > 
+                { resultData(data) }
             </div>
         </>
-      )
+        )
     }
 
-    export default DataForms;
+    export default DataForms

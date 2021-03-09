@@ -8,13 +8,14 @@ const useCustomForm = ({
   initialValues,
   onSubmit
   }) => {
-  const [values, setValues] = useState(initialValues || {});
-  const [errors, setErrors] = useState({});
-  const [touched, setTouched] = useState({});
+  const [values, setValues] = useState(initialValues )
+  const [errors, setErrors] = useState({})
+  const [touched, setTouched] = useState({})
   // const [onSubmitting, setOnSubmitting] = useState(false);
   // const [onBlur, setOnBlur] = useState(false)
 
-  const formRendered = useRef(true);
+  const formRendered = useRef(true)
+  console.log(initialValues)
 
   useEffect(() => {
     if (formRendered.current) {
@@ -25,7 +26,7 @@ const useCustomForm = ({
         // setOnSubmitting(false)
         // setOnBlur(false)
     }
-    formRendered.current = false;
+    formRendered.current = false
   }, [initialValues])
 
   const handleChange = (event) => {
@@ -52,8 +53,11 @@ const useCustomForm = ({
     // console.log(title)
     if (event) event.preventDefault()
     setErrors({ ...errors })
+    console.log(valueOf, onSubmit)
     onSubmit({ values, errors })
     console.log("on Submit clicked")
+    // console.log( onSubmit() )
+    console.log( values )
   }
 
 //   const handleSelectChange = event => {
