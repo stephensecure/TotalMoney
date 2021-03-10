@@ -42,7 +42,6 @@ import CardResult from "./CardResult";
         const [formDisplay, SetFormDisplay] = useState("block")
         const [resultDisplay, SetResultDisplay] = useState("none")
 
-
         const sendData =(event) => {
             SetFormDisplay("none")
             SetResultDisplay("block")
@@ -115,10 +114,10 @@ import CardResult from "./CardResult";
                                 <label className="label" htmlFor="empStatus" > Employment Status</label>
                                 <select className="ui dropdown" placeholder="Employment Status" name="empStatus" value= {data.empStatus} onChange={handleChange  }>
                                     <option value="" disabled>-</option>
-                                    <option value="fulltime">Full time</option>
-                                    <option value="partime">Part time</option>
-                                    <option value="student">Student</option>
-                                    <option value="umemployed">Unemployed</option>
+                                    <option value="FullTime">Full time</option>
+                                    <option value="PartTime">Part time</option>
+                                    <option value="Student">Student</option>
+                                    <option value="Unemployed">Unemployed</option>
                                 </select>
                             </div>
                             <div className="field">

@@ -15,7 +15,6 @@ const CardResult = (props) => {
     const dataResult =() => {
         if (income || empStatus) {
             if (empStatus === "student") {
-                console.log("Student card is available")
                 return (
                     <>
                         <li> <p>Anywhere Card</p></li>
@@ -24,8 +23,7 @@ const CardResult = (props) => {
                     </>
                 )
             }
-            if (empStatus === "fulltime" && income > 16000) {
-                console.log("Fulltime card is available")
+            if (income > 16000) {
                 return (
                     <>
                         <li> <p>Anywhere Card</p></li>
