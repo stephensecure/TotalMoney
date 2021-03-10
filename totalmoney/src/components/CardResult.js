@@ -1,23 +1,6 @@
 import React from "react"
 import Silhouette from './silhouette.png'
 import "./CardResult.scss"
-// import { configureStore } from '@reduxjs/toolkit'
-
-// import DataForms from "./DataForms"
-// import useCustomForm from "./useCustomForm"
-
-
-// console.log(store.getState())
-
-// const { values} = DataForms
-// console.log(values)
-
-// const { values} = useCustomForm({
-//     initialValues,
-//     onSubmit: (values) => {
-//         console.log("Card Resultdata value showing ")
-//     }
-// })
 
 
 const CardResult = (props) => {
@@ -45,9 +28,9 @@ const CardResult = (props) => {
                 console.log("Fulltime card is available")
                 return (
                     <>
-                    <li> <p>Anywhere Card</p></li>
-                    <li> <p>Liquid Card </p></li>
-                </>
+                        <li> <p>Anywhere Card</p></li>
+                        <li> <p>Liquid Card </p></li>
+                    </>
                 )
             }
             else {
@@ -67,7 +50,7 @@ const CardResult = (props) => {
         <div className="form_main"> 
             <div className="res_container card_contain">
                 <div className="result_header_main"> 
-                    <h1> Card result </h1>
+                    <h1> Card Result </h1>
                 </div>
                 <div className="card_title">
                     <div className="card_main">
@@ -111,7 +94,6 @@ const CardResult = (props) => {
            
         </div>
     )
-
 }
 
 

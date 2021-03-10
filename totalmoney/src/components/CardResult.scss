@@ -1,22 +1,6 @@
-.form_main {
-    // border: 2px solid green; 
-    // onChange={e => setPostCode(e.target.value)} 
-    // checkbox
-    // onChange={(event) => setAgree(event.currentTarget.checked)} 
-    // onChange={e => setFirstname(e.target.value)} 
-}
-
-// .form_head {
-//     display: flex;
-//     border: solid 2px #e2e5e8;
-// }
 
 .res_container {
-    // width: 800px; 
-    // display: flex;
-    // border: 2px solid green; 
     padding: 20px;
-
 }
 .card_contain {
     border: solid 2px #e2e5e8;
@@ -28,7 +12,6 @@ p, h1 {
 }
 
 .result_header_main {
-    // border: 2px solid red; 
     display: flex;
     justify-content: center;
     padding: 20px 10px;
@@ -36,17 +19,6 @@ p, h1 {
 
 .card_title {
     display: flex;
-    // width: 800px; 
-    // border: 2px solid red; 
-}
-
-.card_main {
-    // border: 2px solid aqua; 
-    // width: 400px; 
-    // display: flex;
-    // padding: 10px;
-    // margin: 10px;
-  
 }
 
 .leftbox {
@@ -60,21 +32,15 @@ p, h1 {
     padding: 0 10px;
     margin: 0 10px ;
 }
+
 .res_row {
     background: #fff;
     border-radius: 5px;
     width: 445px;
-    // box-shadow: rgb(12 12 13 / 10%) 0 1px 4px;
     border: solid 1px #e2e5e8;
 }
 
-// img {
-//     height: 70px;
-//     width: 70px;
-// }
-
 .headerbox {
-    // border: 2px solid violet; 
     width: 100%;
     display: flex;
     padding: 10px 10px 0px;
@@ -83,23 +49,18 @@ p, h1 {
 .sil_image {
     height: 70px;
     width: 70px;
-
 }
 
 .column1 {
     display: flex;
-    // border: 2px solid brown; 
     margin: 10px 0;
-
 }
 
 .text_left {
-    // border: 2px solid rgb(20, 54, 168); 
     text-align: right;
 }
 
 .text_right {
-    // border: 2px solid rgb(134, 180, 26); 
     text-align: left;
 }
 
@@ -113,7 +74,6 @@ p, h1 {
 }
 
 .smallText {
-        // border: 2px solid rgb(134, 180, 26); 
     padding: 0 10px;
 }
 

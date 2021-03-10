@@ -6,7 +6,6 @@ img.virginred {
 .product {
    padding: 10px ;
    background-color: #faf8f8;
-   // background-color: blue;
 }
 
 .product_container {
@@ -20,7 +19,6 @@ img.virginred {
    display: flex;
    align-items: center;
    padding: 10px 20px 0 20px;
-
 }
 
 .info_header {
@@ -33,17 +31,16 @@ img.virginred {
    font-weight: bold;
    color: #04AEB5;
    text-transform: uppercase;
-
 }
 
 .info_body {
    margin-bottom: 0;
    color: #3D5265;
-
 }
+
 .header_text {
    text-align: left;
-   padding: 10px 10px 10px;
+   padding: 0 10px;
    font-family: 'Source Sans Pro',sans-serif;
    font-size: 24px;
    font-weight: bold;
@@ -73,38 +70,23 @@ img.virginred {
    color: #283643 !important;
 }
 
-// Small screens
-@media only screen and (max-device-width: 480px) {
-  /* styles for mobile browsers smaller than 480px; (iPhone) */
-   body {
-      // background-color: yellow;
-   }
+.titleInfo {
+   padding : 10px 0;
+}
 
+// Small screens - for mobile browsers smaller than 480px; (iPhone) */
+@media only screen and (max-device-width: 480px) {
    .ui.column.grid>[class*="ten wide"].column, .ui.grid>.column.row>[class*="ten wide"].column, .ui.grid>.row>[class*="ten wide"].column, .ui.grid>[class*="ten wide"].column { 
       width: 100% !important;
    }
 }
 
-// Medium screen 
+// Medium screen - for browsers larger than 960px; */
 @media only screen and (min-width: 480px) {
-   /* styles for browsers larger than 960px; */
-   body {
-      background-color: red;
-    }
-   // .column {
-   //   width: 50%;
-   // }
-   // .ui.three.column.grid> .ui.three.wide {
-   //    width: 100% !important;
-   //    // display: grid;
-   // }
    .ui.three.column.grid {
-      // width: 100% !important;
       display: grid;
    }
-   // .small > .ui.grid.cdtable {
-   //    width: 100% !important;
-   // }
+
    .ui.column.grid>[class*="ten wide"].column, .ui.grid>.column.row>[class*="ten wide"].column, .ui.grid>.row>[class*="ten wide"].column, .ui.grid>[class*="ten wide"].column { 
       width: 100% !important;
    }
@@ -115,23 +97,16 @@ img.virginred {
    .product {
       padding: 10px;
   }
-
 }
 
 // Large screens
 @media screen and (min-width: 992px) {
-   body {
-      background-color: green;
-    }
-
     .column {
       width: 100%;
     }
 
    .product {
       padding: 10px 100px;
-      // background-color: #faf8f8;
-      // background-color: blue;
    }
 
    .product_container {
@@ -145,7 +120,6 @@ img.virginred {
       display: flex;
       align-items: center;
       padding: 10px 20px 0 20px;
-
    }
 
    .info_header {
@@ -158,17 +132,15 @@ img.virginred {
       font-weight: bold;
       color: #04AEB5;
       text-transform: uppercase;
-
    }
 
    .info_body {
       margin-bottom: 0;
       color: #3D5265;
-
    }
+
    .header_text {
       text-align: left;
-      padding: 10px 10px 10px;
       font-family: 'Source Sans Pro',sans-serif;
       font-size: 24px;
       font-weight: bold;
@@ -180,26 +152,21 @@ img.virginred {
    }
 
    .cell_dm {
-      // border: aqua 2px solid;
       min-height: 60px;
    }
+
    .cell_dm_bottom {
-      // border: aqua 2px solid;
       min-height: 28px;
    }
 
    .card_cell_top {
-      // border: brown 2px solid;
       min-height: 60px;
-      // padding: 0 10px;
    }
 
    .card_cell {
-      // border: green 2px solid;
       font-family: 'Source Sans Pro',sans-serif;
       line-height: 1.4;
       color: #283643;
-      // text-align: right;
       font-weight: bold;
       text-transform: none;
       font-size: 18px;
@@ -207,18 +174,14 @@ img.virginred {
    }
 
    .card {
-      //  width: 300px;
       padding: 10px;
       margin: 10px;
-      //  border: red 2px solid;
    }
 
    .ui.grid.cdtable {
-         // border: orange 2px solid;
-         padding: 20px 40px;
-         // margin: 0 10px;
-   
+         padding: 20px 40px;   
    }
+
    .ui.six.column.grid {
       margin-top: 10px !important;
       margin-bottom: 10px !important;
@@ -231,14 +194,11 @@ img.virginred {
    }
 
    .lbtn {
-      // background-color: green;
-      // border: orange 2px solid;
       display: flex !important;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 0 5px;
-
    }
 
    div.virginred {
@@ -258,7 +218,6 @@ img.virginred {
       background-color: #f7f7f7;
       border-radius: 0 0 6px 6px;
       margin-bottom: 0;
-
    }
 
    .ph_text_top {
@@ -283,9 +242,10 @@ img.virginred {
 
    .ui.column.grid>[class*="ten wide"].column, .ui.grid>.column.row>[class*="ten wide"].column, .ui.grid>.row>[class*="ten wide"].column, .ui.grid>[class*="ten wide"].column {
       width: 62.5%!important;
-  }
-  .ui.three.column.grid {
+   }
+   
+   .ui.three.column.grid {
    display: flex;
-}
+   }
 
 }

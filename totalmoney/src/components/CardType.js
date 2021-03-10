@@ -20,7 +20,7 @@ const CardType = (props) => {
                             <div className="two column row">
                                 <div className="thirteen wide column">
                                     <p className="header_text"> {props.title} </p>
-                                    <p> {props.titleInfo} </p>
+                                    <p className="titleInfo"> {props.titleInfo} </p>
                                 </div>
                                 <div className="column">
                                 </div>

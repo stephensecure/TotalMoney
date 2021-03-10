@@ -1,2 +1,0 @@
-# TotalMoney
-test
