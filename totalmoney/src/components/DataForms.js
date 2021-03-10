@@ -100,20 +100,20 @@ import CardResult from "./CardResult";
                             <div className="fields">
                                 <div className="eight wide field">
                                     <label htmlFor="firstName">First name</label>
-                                    <input id="firstName" name="firstName" type="text" placeholder="First Name" value= {data.firstName}   onChange={handleChange} />
+                                    <input id="firstName" name="firstName" type="text" placeholder="First Name" value= {data.firstName} onChange={handleChange} required/>
                                 </div>
                                 <div className="eight wide field">
                                     <label htmlFor="lastName" >Last name</label>
-                                    <input id="lastName" type="text" name="lastName" placeholder="Last Name" value= {data.lastName} onChange={handleChange} />
+                                    <input id="lastName" type="text" name="lastName" placeholder="Last Name" value= {data.lastName} onChange={handleChange} required/>
                                 </div>
                             </div>
                             <div className="field">
                                 <label className="label" htmlFor="dob" >Date of birth</label>
-                                <input id="dob" type= "date" name="dob" value= {values.dob} onChange={handleChange} />
+                                <input id="dob" type= "date" name="dob" value= {values.dob} onChange={handleChange} required />
                             </div>
                             <div className="field">
                                 <label className="label" htmlFor="empStatus" > Employment Status</label>
-                                <select className="ui dropdown" placeholder="Employment Status" name="empStatus" value= {data.empStatus} onChange={handleChange}>
+                                <select className="ui dropdown" placeholder="Employment Status" name="empStatus" value= {data.empStatus} onChange={handleChange  }>
                                     <option value="" disabled>-</option>
                                     <option value="fulltime">Full time</option>
                                     <option value="partime">Part time</option>
@@ -123,18 +123,18 @@ import CardResult from "./CardResult";
                             </div>
                             <div className="field">
                                 <label className="label" htmlFor="income" > Annual Income (£)</label>
-                                <input id="income" type= "number" step="any" min="1000" max="1000000" name="income" value= {data.income} onChange={handleChange}/>
+                                <input id="income" type= "number" step="any" min="1000" max="1000000" name="income" value= {data.income} onChange={handleChange} required />
                             </div>
                             <div className="fields">
                                 <div className="eight wide field">
                                     <label htmlFor= "houseNumber"> House Number</label>
-                                    <input id="houseNumber" type= "number" name="houseNumber" value= {data.houseNumber} onChange={handleChange}/>
+                                    <input id="houseNumber" type= "number" name="houseNumber" value= {data.houseNumber} onChange={handleChange} required />
                                 </div>
                             </div>
                             <div className="fields">
                                 <div className="eight wide field">
                                     <label htmlFor="postCode" > Post Code </label>
-                                    <input id="postCode" type= "text" name="postCode" value= {data.postCode} onChange={handleChange}/>
+                                    <input id="postCode" type= "text" name="postCode" value= {data.postCode} onChange={handleChange} required />
                                 </div>
                             </div>
                             <div> 
