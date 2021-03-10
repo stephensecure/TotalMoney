@@ -8,7 +8,6 @@ const CardType = (props) => {
     return (
         <div>
             <div className="product">
-
                 <div className="product_container">
                     <div className="product_content">
                         <div className="product_header">
@@ -21,6 +20,7 @@ const CardType = (props) => {
                             <div className="two column row">
                                 <div className="thirteen wide column">
                                     <p className="header_text"> {props.title} </p>
+                                    <p> {props.titleInfo} </p>
                                 </div>
                                 <div className="column">
                                 </div>
@@ -28,7 +28,7 @@ const CardType = (props) => {
                             <div className=" three wide column">
                                 <img className="virginred" src={Virginred} alt={"virginlogo"} />
                             </div>
-                            <div className="ten wide column">
+                            <div className="ten wide column small">
                                 <div className="ui internally celled grid cdtable">
                                     <div className="four wide column">
                                         <div className="cell_dm"> 
@@ -65,8 +65,8 @@ const CardType = (props) => {
                                 </div>
                             </div>
                             <div className="three wide column lbtn">
-                                <a className="ui primary button" href="/form">Check your Eligibility</a>
-                               <p><a href="https://www.totallymoney.com/credit-cards/card/hsbc-balance-transfer-credit-card/"> See more Details</a> </p> 
+                                <a className="ui home_btn button" href="/forms">Check My Eligibility</a>
+                               <p className="see_more"><a href="https://www.totallymoney.com/credit-cards/card/hsbc-balance-transfer-credit-card/"> See more Details</a> </p> 
                             </div>
                         </div>
                     </div>

@@ -1,12 +1,10 @@
-import { getTitle } from "hookrouter";
+// import { getTitle } from "hookrouter";
 import { useState, useEffect, useRef } from "react";
-
-
 
 
 const useCustomForm = ({
   initialValues,
-  onSubmit
+  // onSubmit
   }) => {
   const [values, setValues] = useState(initialValues )
   const [errors, setErrors] = useState({})
@@ -15,7 +13,7 @@ const useCustomForm = ({
   // const [onBlur, setOnBlur] = useState(false)
 
   const formRendered = useRef(true)
-  console.log(initialValues)
+  // console.log(initialValues)
 
   useEffect(() => {
     if (formRendered.current) {
@@ -53,8 +51,8 @@ const useCustomForm = ({
     // console.log(title)
     if (event) event.preventDefault()
     setErrors({ ...errors })
-    console.log(valueOf, onSubmit)
-    onSubmit({ values, errors })
+    // console.log(valueOf, onSubmit)
+    // onSubmit({ values, errors })
     console.log("on Submit clicked")
     // console.log( onSubmit() )
     console.log( values )

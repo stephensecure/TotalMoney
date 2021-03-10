@@ -3,8 +3,8 @@ import Silhouette from './silhouette.png'
 import "./CardResult.scss"
 // import { configureStore } from '@reduxjs/toolkit'
 
-import DataForms from "./DataForms"
-import useCustomForm from "./useCustomForm"
+// import DataForms from "./DataForms"
+// import useCustomForm from "./useCustomForm"
 
 
 // console.log(store.getState())
@@ -87,7 +87,7 @@ const CardResult = (props) => {
                                 <div className="ui internally celled grid ">
                                     <div className="eight wide column text_left">
                                         <p className="smallText" > {empStatus}</p>
-                                        <p className="smallText" > Annual income: <strong> {income}</strong></p>
+                                        <p className="smallText" > Annual income: <strong> £{income}</strong></p>
                                     </div>
                                     <div className="eight wide column text_right">
                                         <p className="smallText" > House number: <strong> {houseNumber}</strong> </p>
@@ -104,7 +104,11 @@ const CardResult = (props) => {
                         </ul>
                     </div>
                 </div>
+                <div className="form_bottom" > 
+                    <a className="ui red button" href="/forms"> Exit</a>
+                </div>
             </div>
+           
         </div>
     )
 

@@ -10,3 +10,25 @@
 .ui.button.cancelbtn {
     margin: 0 20px;
 }
+
+
+.form_bottom {
+    // border: solid 2px #e2e5e8;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.button_main {
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px;
+}
+
+
+.form_bottom .ui.button {
+    // border: solid 2px #0ef1f1;
+
+}

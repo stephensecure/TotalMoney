@@ -6,7 +6,7 @@ import useCustomForm from "./useCustomForm";
 import "./DataForm.scss"
 import CardResult from "./CardResult";
 
-import { configureStore } from '@reduxjs/toolkit'
+// import { configureStore } from '@reduxjs/toolkit'
 
 
     // const showResult = (values)=> {
@@ -26,10 +26,10 @@ import { configureStore } from '@reduxjs/toolkit'
 
 
     // create engine to show data for or result 
-    const resultEngine =() => {
-        console.log("this is the result engine")
-        // Show result
-    }
+    // const resultEngine =() => {
+    //     console.log("this is the result engine")
+    //     // Show result
+    // }
 
     const DataForms = () => {
 
@@ -64,49 +64,45 @@ import { configureStore } from '@reduxjs/toolkit'
             // touched,
             handleChange,
             // handleBlur,
-            handleSubmit,
+            // handleSubmit,
             } = useCustomForm({
             // initialValues,
             initialValues: data1,
             // initialValues: { ...initialValues, title },
             // title,
-            onSubmit: (values) => {
-                console.log("show/hid - run my function call here", { values, initialValues })
-                console.log("test 2")
-                // href="/form"
-            }
+            // onSubmit: (values) => {
+            //     console.log("show/hid - run my function call here", { values, initialValues })
+            //     console.log("test 2")
+            // }
         })
 
-        console.log(values)
+        // console.log(values)
 
         const data = {...values, title}
-            // console.log(data)
 
         const resultData = (data)=> {
                 return (
-                    <div className="form_main">
-                        {/* {showResult(data) } */}
+                    <div >
                         <CardResult {...data}/>
                     </div>
                 )
         }
 
-        const [formDisplay, SetFormDisplay] = useState("flex")
+        const [formDisplay, SetFormDisplay] = useState("block")
         const [resultDisplay, SetResultDisplay] = useState("none")
 
 
         const steveSubmit =(event) => {
             console.log("handle Steve submit")
             SetFormDisplay("none")
-            SetResultDisplay("flex")
+            console.log(data)
+            // onSubmit({ values, errors })
+            SetResultDisplay("block")
             if (event) event.preventDefault()
 
         }
         const showForm = ()=> {
             const data = {...values, title}
-
-            // console.log(data)
-            // console.log(values)
 
             return (
                 <>
@@ -199,7 +195,6 @@ import { configureStore } from '@reduxjs/toolkit'
                     </div>
                 </div>
             </form>
-        {/* </div> */}
         </div>
         </>
             )
@@ -207,11 +202,16 @@ import { configureStore } from '@reduxjs/toolkit'
        
       return (
         <>
-            <div style={{color: "red", border:"2px solid red", display: formDisplay } } > 
+            <div style={{display: formDisplay } } > 
                 { showForm(data) }
             </div>
-            <div style={{border:"2px solid blue", display: resultDisplay } } > 
-                { resultData(data) }
+            <div style={{ display: resultDisplay } } > 
+               <div className="form_head" >
+                    <div className="form_main" > 
+                        { resultData(data) }
+                    </div>
+                   
+                </div>
             </div>
         </>
         )
